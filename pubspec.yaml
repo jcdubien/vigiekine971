@@ -1,5 +1,5 @@
-name: vigie_kine_urgence_respi_971
-description: Mise en realtion avec le kinésithérapeute de Garde en Guadeloupe 2020 2021
+name: Vigie_Guadeloupe
+description: Mise en relation de kinésithéraputes et présentation de compétences
 
 # The following line prevents the package from being accidentally published to
 # pub.dev using `pub publish`. This is preferred for private packages.
@@ -15,7 +15,7 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 # In iOS, build-name is used as CFBundleShortVersionString while build-number used as CFBundleVersion.
 # Read more about iOS versioning at
 # https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
-version: 1.0.0+1
+version: 0.1.1+12
 
 environment:
   sdk: ">=2.7.0 <3.0.0"
@@ -31,7 +31,7 @@ dependencies:
   flutter_launcher_icons: ^0.8.1
   url_launcher: ^5.7.4
   date_format: ^1.0.9
-
+  flutter_automation: ^1.4.0
 
 
 dev_dependencies:

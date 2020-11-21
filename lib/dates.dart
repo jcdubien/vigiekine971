@@ -7,7 +7,7 @@ class Dates {
 
 
   List<DateTime> _gardesBank = [
-    DateTime.utc(2020, 10, 25),
+
     DateTime.utc(2020, 11, 1),
     DateTime.utc(2020, 11, 2),
     DateTime.utc(2020, 11, 8),
@@ -37,22 +37,25 @@ class Dates {
     DateTime.utc(2021, 3, 14),
     DateTime.utc(2021, 3, 21),
     DateTime.utc(2021, 3, 28),
+
   ];
 
   int _quelleDate() {
 
     int numeroGarde = 0;
-    DateTime now = DateTime.now();
+    DateTime now =  DateTime.now();
     bool isFirstCloser=true;
 
-    for (int i = 0; i < _gardesBank.length; i++) {
-      if (_gardesBank[i].isAfter(now) || _gardesBank[i].isAtSameMomentAs(now)) {
+    for (int i = 0; i < _gardesBank.length-1; i++) {
+
+      if (_gardesBank[i].toLocal().isAfter(now.toLocal()) || _gardesBank[i].toLocal().isAtSameMomentAs(now.toLocal()))  {
         if (isFirstCloser)  {
           isFirstCloser = false;
           numeroGarde=i;
         }
       } else { isFirstCloser=true;
     }}
+
     return numeroGarde;
     }
 
@@ -68,7 +71,25 @@ class Dates {
 
             return dateTxt;
 
+    }
 
+String getDatePrecedenteGarde(){
+
+
+
+            var dateTxt= formatDate(_gardesBank[_quelleDate()-1],[dd,'-',mm,'-',yyyy]);
+
+            return dateTxt;
+
+    }
+
+String getDateSuivanteGarde(){
+
+
+
+            var dateTxt= formatDate(_gardesBank[_quelleDate()+1],[dd,'-',mm,'-',yyyy]);
+
+            return dateTxt;
 
 
 
@@ -76,6 +97,7 @@ class Dates {
 
 
 }
+
 
 
 

@@ -4,6 +4,7 @@ import 'dates.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'veillekine.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 Dates dates=Dates();
 
@@ -26,8 +27,9 @@ class VeilleKine extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData.dark().copyWith(
         visualDensity: VisualDensity.adaptivePlatformDensity,
-
-      )
+        textTheme: GoogleFonts.ubuntuCondensedTextTheme(
+          Theme.of(context).textTheme,
+        ),       )
       ,
 
       home: VeilleKinePage(title: dates.getDateProchaineGarde()),

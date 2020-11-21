@@ -11,6 +11,7 @@ import 'veillekineprecedent.dart';
 import 'veillekinesuivant.dart';
 import 'constants.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 GardesBrain gardesBrain=GardesBrain();
 Dates dates=Dates();
@@ -350,7 +351,7 @@ class BoutonGeoState extends StatelessWidget {
               context: context,
               type: AlertType.none,
               title: gardesBrain.getNomGSC(0).toUpperCase()+" "+gardesBrain.getPrenomGSC(0).toUpperCase(),
-              desc: "Vous reçoit sur rendez-vous à "+gardesBrain.getCommuneGSC(0).toUpperCase()+" le " + dates.getDateProchaineGarde().toUpperCase(),
+              desc: "vous reçoit sur rendez-vous à "+gardesBrain.getCommuneGSC(0).toUpperCase()+" le " + dates.getDateProchaineGarde().toUpperCase(),
               buttons: [
                 DialogButton(
                   child: Text(

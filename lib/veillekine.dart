@@ -10,6 +10,7 @@ import 'package:flutter/services.dart';
 import 'veillekineprecedent.dart';
 import 'veillekinesuivant.dart';
 import 'constants.dart';
+import 'package:rflutter_alert/rflutter_alert.dart';
 
 GardesBrain gardesBrain=GardesBrain();
 Dates dates=Dates();
@@ -344,7 +345,35 @@ class BoutonGeoState extends StatelessWidget {
               fontSize: 20.0,
             ),
           ),
-          onPressed : () {
+          onPressed: () {
+            Alert(
+              context: context,
+              type: AlertType.none,
+              title: gardesBrain.getNomGSC(0).toUpperCase()+" "+gardesBrain.getPrenomGSC(0).toUpperCase(),
+              desc: "Vous reçoit sur rendez-vous à "+gardesBrain.getCommuneGSC(0).toUpperCase()+" le " + dates.getDateProchaineGarde().toUpperCase(),
+              buttons: [
+                DialogButton(
+                  child: Text(
+                    "OK",
+                    style: TextStyle(color: Colors.white, fontSize: 20),
+                  ),
+                  onPressed: () => Navigator.pop(context),
+                  width: 120,
+                ),
+                DialogButton(
+                  child: Text(
+                    "CONTACT",
+                    style: TextStyle(color: Colors.white, fontSize: 20),
+                  ),
+                  onPressed: () {
+                    launch("tel://"+gardesBrain.getTelGSC(0));
+                  },
+                  width: 120,
+                ),
+              ],
+            ).show();
+          },
+          onLongPress : () {
             launch("tel://"+gardesBrain.getTelGSC(0));
           },
 

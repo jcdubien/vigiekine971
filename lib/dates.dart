@@ -48,7 +48,7 @@ class Dates {
 
     for (int i = 0; i < _gardesBank.length-1; i++) {
 
-      if (_gardesBank[i].toLocal().isAfter(now.toLocal()) || _gardesBank[i].toLocal().isAtSameMomentAs(now.toLocal()))  {
+      if (_gardesBank[i].toLocal().isAfter(now) || _gardesBank[i].toLocal().isAtSameMomentAs(now))  {
         if (isFirstCloser)  {
           isFirstCloser = false;
           numeroGarde=i;

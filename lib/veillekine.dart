@@ -178,7 +178,7 @@ class _VeilleKineState extends State<VeilleKinePage> {
                 child: RaisedButton(
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(18.0),
-                        side: BorderSide(color: Colors.red)
+                        side: BorderSide(color: Colors.white)
                     ),
 
 
@@ -194,6 +194,34 @@ class _VeilleKineState extends State<VeilleKinePage> {
                       ),
                     ),
                     onPressed: () {
+                      Alert(
+                        context: context,
+                        type: AlertType.none,
+                        title: gardesBrain.getNomRVLEVANT(0).toUpperCase()+" "+gardesBrain.getPrenomRVLEVANT(0).toUpperCase(),
+                        desc: "vous reçoit sur rendez-vous à "+gardesBrain.getCommuneRVLEVANT(0).toUpperCase()+" le " + dates.getDateProchaineGarde().toUpperCase(),
+                        buttons: [
+                          DialogButton(
+                            child: Text(
+                              "OK",
+                              style: TextStyle(color: Colors.white, fontSize: 20),
+                            ),
+                            onPressed: () => Navigator.pop(context),
+                            width: 120,
+                          ),
+                          DialogButton(
+                            child: Text(
+                              "CONTACT",
+                              style: TextStyle(color: Colors.white, fontSize: 20),
+                            ),
+                            onPressed: () {
+                              launch("tel://"+gardesBrain.getTelRVLEVANT(0));
+                            },
+                            width: 120,
+                          ),
+                        ],
+                      ).show();
+                    },
+                    onLongPress : () {
                       launch("tel://"+gardesBrain.getTelRVLEVANT(0));
                     }
                 ),
@@ -204,7 +232,7 @@ class _VeilleKineState extends State<VeilleKinePage> {
                 child: RaisedButton(
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(18.0),
-                        side: BorderSide(color: Colors.red)
+                        side: BorderSide(color: Colors.white)
                     ),
                     color:Colors.blueGrey.withOpacity(0.50),
                     elevation: 20.0,
@@ -217,6 +245,34 @@ class _VeilleKineState extends State<VeilleKinePage> {
                       ),
                     ),
                     onPressed: () {
+                      Alert(
+                        context: context,
+                        type: AlertType.none,
+                        title: gardesBrain.getNomNGT(0).toUpperCase()+" "+gardesBrain.getPrenomNGT(0).toUpperCase(),
+                        desc: "vous reçoit sur rendez-vous à "+gardesBrain.getCommuneNGT(0).toUpperCase()+" le " + dates.getDateProchaineGarde().toUpperCase(),
+                        buttons: [
+                          DialogButton(
+                            child: Text(
+                              "OK",
+                              style: TextStyle(color: Colors.white, fontSize: 20),
+                            ),
+                            onPressed: () => Navigator.pop(context),
+                            width: 120,
+                          ),
+                          DialogButton(
+                            child: Text(
+                              "CONTACT",
+                              style: TextStyle(color: Colors.white, fontSize: 20),
+                            ),
+                            onPressed: () {
+                              launch("tel://"+gardesBrain.getTelNGT(0));
+                            },
+                            width: 120,
+                          ),
+                        ],
+                      ).show();
+                    },
+                    onLongPress: () {
                       launch("tel://"+gardesBrain.getTelNGT(0));
                     }
                 ),
@@ -227,7 +283,7 @@ class _VeilleKineState extends State<VeilleKinePage> {
                 child: RaisedButton(
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(18.0),
-                        side: BorderSide(color: Colors.red)
+                        side: BorderSide(color: Colors.white)
                     ),
                     color:Colors.blueGrey.withOpacity(0.50),
                     elevation: 20.0,
@@ -240,6 +296,34 @@ class _VeilleKineState extends State<VeilleKinePage> {
                       ),
                     ),
                     onPressed: () {
+                      Alert(
+                        context: context,
+                        type: AlertType.none,
+                        title: gardesBrain.getNomEXC(0).toUpperCase()+" "+gardesBrain.getPrenomEXC(0).toUpperCase(),
+                        desc: "vous reçoit sur rendez-vous à "+gardesBrain.getCommuneEXC(0).toUpperCase()+" le " + dates.getDateProchaineGarde().toUpperCase(),
+                        buttons: [
+                          DialogButton(
+                            child: Text(
+                              "OK",
+                              style: TextStyle(color: Colors.white, fontSize: 20),
+                            ),
+                            onPressed: () => Navigator.pop(context),
+                            width: 120,
+                          ),
+                          DialogButton(
+                            child: Text(
+                              "CONTACT",
+                              style: TextStyle(color: Colors.white, fontSize: 20),
+                            ),
+                            onPressed: () {
+                              launch("tel://"+gardesBrain.getTelEXC(0));
+                            },
+                            width: 120,
+                          ),
+                        ],
+                      ).show();
+                    },
+                    onLongPress: () {
                       launch("tel://"+gardesBrain.getTelEXC(0));
                     }
                 ),
@@ -251,7 +335,7 @@ class _VeilleKineState extends State<VeilleKinePage> {
                 child: RaisedButton(
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(18.0),
-                      side: BorderSide(color: Colors.red)
+                      side: BorderSide(color: Colors.white)
                   ),
                   color:Colors.blueGrey.withOpacity(0.50),
                   elevation: 20.0,
@@ -264,6 +348,34 @@ class _VeilleKineState extends State<VeilleKinePage> {
                     ),
                   ),
                   onPressed: () {
+                    Alert(
+                      context: context,
+                      type: AlertType.none,
+                      title: gardesBrain.getNomNBT(0).toUpperCase()+" "+gardesBrain.getPrenomNBT(0).toUpperCase(),
+                      desc: "vous reçoit sur rendez-vous à "+gardesBrain.getCommuneNBT(0).toUpperCase()+" le " + dates.getDateProchaineGarde().toUpperCase(),
+                      buttons: [
+                        DialogButton(
+                          child: Text(
+                            "OK",
+                            style: TextStyle(color: Colors.white, fontSize: 20),
+                          ),
+                          onPressed: () => Navigator.pop(context),
+                          width: 120,
+                        ),
+                        DialogButton(
+                          child: Text(
+                            "CONTACT",
+                            style: TextStyle(color: Colors.white, fontSize: 20),
+                          ),
+                          onPressed: () {
+                            launch("tel://"+gardesBrain.getTelNBT(0));
+                          },
+                          width: 120,
+                        ),
+                      ],
+                    ).show();
+                  },
+                  onLongPress: () {
                     launch("tel://"+gardesBrain.getTelNBT(0));
                   },
                 ),
@@ -333,7 +445,7 @@ class BoutonGeoState extends StatelessWidget {
         child: RaisedButton(
           shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(18.0),
-              side: BorderSide(color: Colors.red)
+              side: BorderSide(color: Colors.white)
           ),
           color:Colors.blueGrey.withOpacity(0.50),
 
